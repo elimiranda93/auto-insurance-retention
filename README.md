@@ -14,14 +14,14 @@ My area of interest is property & casualty insurance (insurance associated with 
 
 ## 📊 Dataset
 
-The dataset comes from **Kaggle**, a prominent platform for public and paid datasets. See the data dictionary below for information regarding columns in the dataset and the row values they carry. 
+The dataset comes from **Kaggle**, a prominent platform for public and paid datasets. See the data dictionary below for information regarding columns in the dataset and the row values they carry. Raw data can be found in the following link: https://drive.google.com/drive/folders/1tK2drVlQC_fwGeblF-jODaq3gtiQxPOo?usp=sharing
 ![image](https://github.com/elimiranda93/auto-insurance-retention/assets/166231821/5bbb02b9-ed49-494b-895c-c0480bee572a)
 
 
 ## 🚀 Project Workflow
 
 ### ➡️ Data Cleaning
-Data cleaning consists of removing irrelevant features, handling null/missing data, converting features into appropriate dtypes and checking for duplicate data. 
+Data cleaning consists of removing irrelevant features, handling null/missing data, converting features into appropriate dtypes and checking for duplicate data. Clean data can be found in the following link(see the file with 'clean' in its name):https://drive.google.com/drive/folders/1tK2drVlQC_fwGeblF-jODaq3gtiQxPOo?usp=sharing
 
 ### 🕵️‍♂️ Exploratory Data Analysis (EDA)
 EDA will help the understanding of feature distributions and relationships retention and/or churn. This understanding will in turn idenfity ideal model choise and guide feature engineering.
