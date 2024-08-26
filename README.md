@@ -82,16 +82,16 @@ Note: The class imbalance was discovered after baseline modeling was completed, 
 
 RESAMPLED BASELINE MODELS
 - Resampled Baseline Log 1 Results:
-Best Training Score: 0.6792481296165591
-Best Test Score: 0.5578100838903702
+Train Score: 0.6874701786768121
+Test Score: 0.5829792242474421
 
 - Resampled Baseline XG Boost Results:
-Best Training Score: 0.6861878791605245
-Best Test Score: 0.6243541821399147
+Train Score: 0.9221310317550006
+Test Score: 0.8753556310447131
 
 - Resampled Baseline Decision Tree Results:
-Best Training Score: 0.8970850458504891
-Best Test Score: 0.6884489413254435
+Training Score: 1.0
+Test Score: 0.7958647364170248
 
 TUNED MODELS
 - Tuned Log 1 Results:
@@ -110,10 +110,13 @@ Best Test Score: 0.6884489413254435
 Best Training Score: 0.8972239456292161
 Best Test Score: 0.6668026283214215
 
-
-
 ## 📝 Findings and Conclusions
-The models in their current state are doing a poor job of making predictions on this data set. The primary cause for this is likely poor data quality. 
+Based on the scores above, we saw an improvement in model performance from our original Baseline models. However, there were marginal changes, if at all, between all Resampled Baseline and Tuned models, except for both XG Boosts. Nevertheless, we can conclude that XG Boost is the best tuned model. This is the case for the following reasons.
+-Logistic Regression performed the worst of all 4 models.
+-Decision Tree and KNN have a large disparity between their train and test scores, which is a sign of overfitting.
+-XG Boost has the highest and most balanced scores of all 4 models.
+
+However, it is odd that the Tuned XG Boost model performed worse than the Resampled Baseline XG Boost. This abnormal performance is the case even after attempting ensemble implementation and test more sampling techniques. Based on researching the causes of this, it is likely that the dimensional reducer either caused a loss of important information or emphasized noise in the data. Further, exploration and experimentation with features, models, sampling techniques and hyperparameter optimization will be needed to explore this issue further. When comparing the ROC AUC Scores for both the Tuned and Resampled Baseline XG Boost models, it was found they were identically 69%. These scores tell us two things: 1.) Both models perform slightly better than taking a random guess at the likelihood of customers churning. 2.) The class imbalance is still hindering our models' performance. 
 
 Potential improvements:
 Conducting research for data with better quality could be a possible solution to the performance of the models for this project. A dataset containing demographics for more customers that churned would be ideal. Also, instead of using generated data, real world data would be ideal or perhaps generated data that was more reflective of the real world. Lastly, another angle to approach this project would be to use days_tenure as the target variable for modeling as it is the inverse of churn and can still be used to identify demographics associated with customer retention. Since this variable is continuous, it would be best to use linear regression models, decision tree, KNN and XG Boost.
