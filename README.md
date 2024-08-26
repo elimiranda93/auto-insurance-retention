@@ -64,24 +64,59 @@ Train Score: 0.30395692993157586
 Test Score: 0.30129950495049507
 The results of this model were low too, with marginal differences from the Log 1 results. 
 
-- XG Boost:
+- XG Boost Results:
 Mean Squared Error: 5111814.5000
 R^2 Score: 0.0646
 Based on the Mean Squared Error, the XG Boost model is not very good at making predictions on this DataFrame. 
 The R^2 score supports our findings above as the model is only able to explain about 7.05% of the variance in the target variable. In other words, the model does not fit this data. 
 
-- Decision Tree:
+- Decision Tree Results:
 Cross-validation scores: [0.1170777  0.12027583 0.11788887 0.11709322 0.11616496]
 Mean cross-validation score: 0.1177001172868791
 The Mean cross-validation score is considerably low. This is likely due to the data quality. However, hyperparameter tuning could be helpful. 
 
+MODEL OPTIMIZATION
+For our model tuning/optimization, several sampling techniques were tested in an attempt to resolve a class imbalance in the data (likely stemming from an imbalance in the target class). The most effective sampling technique was SMOOTEN. Additionally, pipelines were used to streamline data preprocessing and gridsearch were used to find the optimal combinations of parameters that yield the best performance for each model. 
+
+Note: The class imbalance was discovered after baseline modeling was completed, so the baseline models were rerun with the same resampled data as the tuned models. Log 2 was dropped as a gridsearch will only result in one optimal Log model. Train/Test scores were used to evaluate all baseline and tuned models. 
+
+RESAMPLED BASELINE MODELS
+- Resampled Baseline Log 1 Results:
+Best Training Score: 0.6792481296165591
+Best Test Score: 0.5578100838903702
+
+- Resampled Baseline XG Boost Results:
+Best Training Score: 0.6861878791605245
+Best Test Score: 0.6243541821399147
+
+- Resampled Baseline Decision Tree Results:
+Best Training Score: 0.8970850458504891
+Best Test Score: 0.6884489413254435
+
 TUNED MODELS
+- Tuned Log 1 Results:
+Best Training Score: 0.6792481296165591
+Best Test Score: 0.5578100838903702
+
+- Tuned XG Boost Results:
+Best Training Score: 0.6861878791605245
+Best Test Score: 0.6243541821399147
+
+- Tuned Decision Tree Results:
+Best Training Score: 0.8970850458504891
+Best Test Score: 0.6884489413254435
+
+- Tuned KNN Results:
+Best Training Score: 0.8972239456292161
+Best Test Score: 0.6668026283214215
+
+
 
 ## 📝 Findings and Conclusions
 The models in their current state are doing a poor job of making predictions on this data set. The primary cause for this is likely poor data quality. 
 
 Potential improvements:
-Conducting research for data with better quality could be a possible solution to the performance of the models for this project. Instead of using generated data, real world data would be ideal or perhaps generated data that was more reflective of the real world. 
+Conducting research for data with better quality could be a possible solution to the performance of the models for this project. A dataset containing demographics for more customers that churned would be ideal. Also, instead of using generated data, real world data would be ideal or perhaps generated data that was more reflective of the real world. Lastly, another angle to approach this project would be to use days_tenure as the target variable for modeling as it is the inverse of churn and can still be used to identify demographics associated with customer retention. Since this variable is continuous, it would be best to use linear regression models, decision tree, KNN and XG Boost.
 
 
 
