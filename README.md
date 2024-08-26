@@ -15,8 +15,7 @@ My area of interest is property & casualty insurance (insurance associated with 
 ## 📊 Dataset
 
 The dataset comes from **Kaggle**, a prominent platform for public and paid datasets. See the data dictionary below for information regarding columns in the dataset and the row values they carry. Raw data can be found in the following link: https://drive.google.com/drive/folders/1huMm9Sb7muOWKaOKiQN6lG2Kt61L9U58?usp=sharing
-![image](https://github.com/elimiranda93/auto-insurance-retention/assets/166231821/5bbb02b9-ed49-494b-895c-c0480bee572a)
-
+![image](https://github.com/user-attachments/assets/0dca9910-d605-4393-b11f-1df7764907eb)
 
 ## 🚀 Project Workflow
 
@@ -30,8 +29,11 @@ EDA will help the understanding of feature distributions and relationship retent
 I anticipate my project will add value in both the business and societal sense. Where insurance carriers can increase customer retention by 5% allowing for a reduction in added spending by 10% or $165,000,000 (Vigderman 2023). These savings in ad spending can be passed on to customers in the form of a reduction in the annual premium by 4%. If we are considering the national average cost of $2,150 annually, we would see the cost be reduced to $2,064 (Martin, Smith 2024). It may not seem like a large amount of savings, but if the machine learning from this project can be adopted by all insurance carriers that carry personal auto insurance, then these savings can be felt by the ~232.8 million licensed drivers in the United States. 
 
 Sources: 
-Car Insurance Company Ad Spending | AutoInsurance.com. (2023, March 23). Autoinsurance.com. https://www.autoinsurance.com/research/car-insurance-ads/
-Martin, E. (2024, June 11). Car Insurance Facts And Statistics 2024. Forbes Advisor. https://www.forbes.com/advisor/car-insurance/car-insurance-facts-and-statistics/
+
+AutoInsurance.com. "The Impact of Car Insurance Ads: How They Shape Consumer Behavior." AutoInsurance.com, https://www.autoinsurance.com/research/car-insurance-ads/. Accessed 26 Aug. 2024.
+
+Hammett, Elizabeth. "Car Insurance Facts and Statistics: 2023 Edition." Forbes, 19 July 2023, https://www.forbes.com/advisor/car-insurance/car-insurance-facts-and-statistics/. Accessed 26 Aug. 2024.
+
 
 ### 🧠 Feature Engineering
 During feature engineering, dummy values were generated for the 'county' and 'marital_status' columns, which allowed us to convert it from a categorical column to a numerical column that can be used for modeling. 
@@ -42,13 +44,14 @@ length_of_residence: While exploring this column, the value 6.801000118255615 wa
 
 income: This column was reviewed. However, no changes were made to it as all the row values appeared reasonable. 
 
-home_market_value: This column was categorical and could not be processed in a model in this state. Since the values in this column were a range, the ranges were split into upper and lower bound columns. Then each row-level upper and lower bound values were averaged to create a new numerical avg_home_market_value column. 
+home_market_value: This column was categorical and could not be processed in a model in this state. Since the values in this column were a range, the ranges were split into upper and lower bound columns. Then the lower bound was kept. For null values, the averages of the lower bounds were used to fill them. 
 
-age_in_years: This column had a broad range of ages. Running models on such a broad range could be computationally expensive and taxing, so the ages were consolidated into ranges. A concern regarding the quality of data for this column was raised in that there was a significantly higher count of people age 55 years than any other age in the distribution. However, they were kept in the dataframe for this iteration.
+age_in_years: This column had a broad range of ages. Running models on such a broad range could be computationally expensive and taxing, so the ages were consolidated into ranges(UPDATE: Engineering in this manner was adverse to our model performance, so the column's values were left as they were.). A concern regarding the quality of data for this column was raised in that there was a significantly higher count of people aged 55 years than any other age in the distribution. However, they were kept in the dataframe for this iteration. 
 
 ### 🏭 Modeling
 The testing and evaluation of models includes:
 
+BASELINE MODELS
 - Logistic Regression: Due to concerns with the data quality and weak correlations observed in heatmaps, the expectations for models on this dataframe are low.
   
 - Log 1 Results:
@@ -71,6 +74,8 @@ The R^2 score supports our findings above as the model is only able to explain a
 Cross-validation scores: [0.1170777  0.12027583 0.11788887 0.11709322 0.11616496]
 Mean cross-validation score: 0.1177001172868791
 The Mean cross-validation score is considerably low. This is likely due to the data quality. However, hyperparameter tuning could be helpful. 
+
+TUNED MODELS
 
 ## 📝 Findings and Conclusions
 The models in their current state are doing a poor job of making predictions on this data set. The primary cause for this is likely poor data quality. 
