@@ -20,7 +20,7 @@ The dataset comes from **Kaggle**, a prominent platform for public and paid data
 ## 🚀 Project Workflow
 
 ### ➡️ Data Cleaning
-Data cleaning consists of removing irrelevant features, handling null/missing data, converting features into appropriate dtypes and checking for duplicate data. Clean data can be found in the following link(see the file named 'df_auto_churn_clean_s3' in its name):https://drive.google.com/drive/folders/1tK2drVlQC_fwGeblF-jODaq3gtiQxPOo?usp=sharing
+Data cleaning consists of removing irrelevant features, handling null/missing data, converting features into appropriate dtypes and checking for duplicate data. Clean data can be found in the following link(see the file named 'df_auto_churn_clean_s3' in its name):[https://drive.google.com/drive/folders/1huMm9Sb7muOWKaOKiQN6lG2Kt61L9U58?usp=sharing]
 
 ### 🕵️‍♂️ Exploratory Data Analysis (EDA)
 EDA will help the understanding of feature distributions and relationship retention and/or churn. This understanding will in turn identify the ideal model choices and guide feature engineering.
