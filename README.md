@@ -14,7 +14,7 @@ My area of interest is property & casualty insurance (insurance associated with 
 
 ## 📊 Dataset
 
-The dataset comes from **Kaggle**, a prominent platform for public and paid datasets. See the data dictionary below for information regarding columns in the dataset and the row values they carry. Raw data can be found in the following link: [https://drive.google.com/drive/folders/1huMm9Sb7muOWKaOKiQN6lG2Kt61L9U58?usp=sharing](https://drive.google.com/drive/folders/1KJpAgD4SFD_3RffnR2_MMTriIyCti3bh?usp=sharing)
+The dataset comes from **Kaggle**, a prominent platform for public and paid datasets. See the data dictionary below for information regarding columns in the dataset and the row values they carry. Raw data can be found in the following link: https://www.kaggle.com/datasets/merishnasuwal/auto-insurance-churn-analysis-dataset?select=autoinsurance_churn.csv
 ![image](https://github.com/user-attachments/assets/0dca9910-d605-4393-b11f-1df7764907eb)
 
 ## 🚀 Project Workflow
